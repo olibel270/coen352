@@ -1,7 +1,7 @@
 public class ISort {
 	public static void main(String[] args){
 		//Int cast
-		int to_sort[] = new int[6];
+		int to_sort[] = new int[args.length];
 		for(int i=0;i<args.length;i++)
 			to_sort[i] = Integer.parseInt(args[i]);
 		
