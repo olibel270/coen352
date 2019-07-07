@@ -37,11 +37,18 @@ public class ISSort {
 		}
 		
 		// =================== Sort Array =====================
-		int	swap_counter = 0;
+		int comp_counter=0;
+		
 		for(int i=0;i<to_sort.length;i++) {
-			for(int j=i; (j>0) && ((int)to_sort[j]<(int)to_sort[j-1]); j--) {
-				swap(to_sort, j, j-1);
-				swap_counter++;
+			for(int j=i; (j>0) ;j--) {
+				if((int)to_sort[j]<(int)to_sort[j-1]) {
+					swap(to_sort, j, j-1);
+					++comp_counter;
+				}
+				else {
+					++comp_counter;
+					break;
+				}	
 			}
 		}
 		// ================================================
@@ -56,7 +63,7 @@ public class ISSort {
 
 		//======Show # of Comparisons=============
 		System.out.print("Comparisons: ");
-		System.out.println(swap_counter);
+		System.out.println(comp_counter);
 		
 		//========show Sorted array ============
 		System.out.print("Sorted: ");
@@ -116,7 +123,7 @@ public class ISSort {
 			System.out.print(to_sort[i]);
 			System.out.print(" ");
 		}
-		System.out.println("<");
+		System.out.println(">");
 	}
 	
 	public static void 	printDescendingRun(){
@@ -126,7 +133,7 @@ public class ISSort {
 			System.out.print(to_sort[i]);
 			System.out.print(" ");
 		}
-		System.out.println(">");
+		System.out.println("<");
 	}
 	
 	public static void 	revertDescendingRun(){

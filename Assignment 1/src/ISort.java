@@ -14,14 +14,21 @@ public class ISort {
 		System.out.print("\n");
 		
 		// =================== Sort Array =====================
-		int	swap_counter = 0;
+		int comp_counter=0;
 		long nano_start_time = System.nanoTime();
+		
 		for(int i=0;i<to_sort.length;i++) {
-			for(int j=i; (j>0) && ((int)to_sort[j]<(int)to_sort[j-1]); j--) {
-				swap(to_sort, j, j-1);
-				swap_counter++;
+			for(int j=i; (j>0) ;j--, ++comp_counter) {
+				if((int)to_sort[j]<(int)to_sort[j-1]) {
+					swap(to_sort, j, j-1);
+				}
+				else {
+					++comp_counter;
+					break;
+				}	
 			}
 		}
+				
 		long nano_end_time = System.nanoTime();
 		long nano_execution_time = nano_end_time - nano_start_time;
 		
@@ -32,7 +39,7 @@ public class ISort {
 
 		//======Show # of Comparisons=============
 		System.out.print("Comparisons: ");
-		System.out.println(swap_counter);
+		System.out.println(comp_counter);
 		
 		//========show Sorted array ============
 		System.out.print("Sorted: ");
