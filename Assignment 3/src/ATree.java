@@ -9,12 +9,17 @@ public class ATree {
 	  
 	  String st; 
 	  while ((st = br.readLine()) != null) 
-	    if (st.charAt(0)=='a')
+	    if (st.charAt(0)=='a') {
 	    	System.out.println("ADD: " + st);
-	    else if (st.charAt(0)=='f')
+	    }
+	    	
+	    else if (st.charAt(0)=='f') {
 	    	System.out.println("FIND: " + st);
-	    else if (st.charAt(0)=='r')
+
+	    }
+	    else if (st.charAt(0)=='r') {
 	    	System.out.println("REMOVE: " + st);
+	    }
 	  br.close();
 	  } 
 }
